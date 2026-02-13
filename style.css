@@ -534,6 +534,41 @@ footer .social-links a:hover {
 /***************************************/
 
 
+@media screen and (max-width: 768px) {
+
+  nav {
+    height: auto;
+    padding: 10px 0;
+  }
+
+  .nav-inner {
+    flex-direction: column;
+    width: 95%;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+    margin: 5px 0;
+  }
+
+  .f-item-con {
+    grid-template-columns: 1fr !important;
+    width: 95%;
+    gap: 2rem;
+  }
+
+  .contact-detail a {
+    font-size: 1rem;
+    justify-content: center;
+  }
+
+}
+
 
 
 
