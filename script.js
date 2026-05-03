@@ -86,3 +86,16 @@ window.onscroll = function() {
 function topFunction() {
     window.scrollTo({top: 0, behavior: 'smooth'});
 }
+const galleryScroll = document.getElementById("gallery-scroll");
+const galleryLeft = document.getElementById("gallery-left");
+const galleryRight = document.getElementById("gallery-right");
+
+const scrollAmount = 380;
+
+galleryRight.addEventListener("click", () => {
+    galleryScroll.scrollBy({ left: scrollAmount, behavior: "smooth" });
+});
+
+galleryLeft.addEventListener("click", () => {
+    galleryScroll.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+});
