@@ -86,16 +86,22 @@ window.onscroll = function() {
 function topFunction() {
     window.scrollTo({top: 0, behavior: 'smooth'});
 }
-const galleryScroll = document.getElementById("gallery-scroll");
-const galleryLeft = document.getElementById("gallery-left");
-const galleryRight = document.getElementById("gallery-right");
 
-const scrollAmount = 380;
+document.addEventListener('DOMContentLoaded', () => {
+    const galleryScroll = document.getElementById("gallery-scroll");
+    const galleryLeft = document.getElementById("gallery-left");
+    const galleryRight = document.getElementById("gallery-right");
 
-galleryRight.addEventListener("click", () => {
-    galleryScroll.scrollBy({ left: scrollAmount, behavior: "smooth" });
-});
+    // مقدار التمرير (عرض الصورة 300 + الفراغ 15)
+    const scrollStep = 315; 
 
-galleryLeft.addEventListener("click", () => {
-    galleryScroll.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+    if (galleryRight && galleryLeft && galleryScroll) {
+        galleryRight.addEventListener("click", () => {
+            galleryScroll.scrollBy({ left: scrollStep, behavior: "smooth" });
+        });
+
+        galleryLeft.addEventListener("click", () => {
+            galleryScroll.scrollBy({ left: -scrollStep, behavior: "smooth" });
+        });
+    }
 });

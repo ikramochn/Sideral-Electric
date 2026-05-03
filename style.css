@@ -641,86 +641,49 @@ footer .social-links a:hover {
 
 
 
-  .clients-gallery {
-  padding: 80px 0;
-  background: #fff;
-}
-
-.gallery-wrapper {
-  position: relative;
-  width: 100%;
-  padding: 0 5%;
-}
-
+  /* إصلاح قسم الإنجازات - الصور */
 .gallery-scroll {
   display: flex;
   overflow-x: auto;
-  gap: 20px;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-}
-
-.gallery-scroll::-webkit-scrollbar {
-  display: none;
+  gap: 15px;
+  padding: 20px 0;
+  align-items: center; /* لضمان توسط الصور عمودياً */
 }
 
 .gallery-img {
-  min-width: 350px;
-  height: 220px;
-  object-fit: cover;
+  min-width: 300px; /* عرض ثابت لكل صورة */
+  height: 250px;    /* ارتفاع ثابت */
+  object-fit: cover; /* أهم خاصية: تجعل الصورة تملأ المساحة بدون تمطيط */
   border-radius: 12px;
-  transition: 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  flex-shrink: 0;   /* تمنع الصور من الانضغاط */
 }
 
-.gallery-img:hover {
-  transform: scale(1.05);
-}
-
-.gallery-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  background: var(--darkblue);
-  color: var(--lightyellow);
-  border: none;
-  cursor: pointer;
-  z-index: 10;
-}
-
-.gallery-arrow.left { left: 10px; }
-.gallery-arrow.right { right: 10px; }
-
-
-.references {
-  padding: 80px 5%;
-  background: #f7f7f7;
-  text-align: center;
-}
-
+/* إصلاح قسم الشركاء (Logos) */
 .logos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* توزيع تلقائي متناسق */
+  gap: 40px;
   align-items: center;
-  margin-top: 40px;
+  justify-items: center;
+  padding: 20px 0;
 }
 
-.logos-grid img {
-  width: 100px;
-  height: auto;
-  filter: grayscale(100%);
+.reference-img {
+  width: 120px;      /* توحيد عرض الشعارات */
+  height: 80px;      /* توحيد الارتفاع */
+  object-fit: contain; /* تجعل اللوغو يظهر كاملاً داخل الإطار بدون قص */
+  filter: grayscale(100%); /* اختياري: تجعلها رمادية وتلون عند التمرير */
   transition: 0.3s ease;
-  margin: auto;
+  opacity: 0.8;
 }
 
-.logos-grid img:hover {
+.reference-img:hover {
   filter: grayscale(0%);
+  opacity: 1;
   transform: scale(1.1);
 }
+
   /* ---------- FOOTER ---------- */
 
   .f-item-con {
