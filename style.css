@@ -24,6 +24,10 @@ body { font-family: 'Roboto', sans-serif; color: var(--black); scroll-behavior: 
  overflow-x: hidden;
 }
 
+
+
+
+
 /* -------- NAVIGATION BLUR MODERNE AVEC STYLE TEXTE -------- */
 nav {
     position: fixed;
@@ -391,6 +395,213 @@ font-family: 'Roboto', sans-serif;
 /**********************/
 
 
+
+.clients-gallery {
+  padding: 80px 0;
+  background: #fff;
+}
+
+.gallery-wrapper {
+  position: relative;
+  width: 100%;
+  padding: 0 5%;
+}
+
+.gallery-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.gallery-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-img {
+  min-width: 350px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
+}
+
+.gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: var(--darkblue);
+  color: var(--lightyellow);
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.gallery-arrow.left { left: 10px; }
+.gallery-arrow.right { right: 10px; }
+
+.references {
+  padding: 80px 5%;
+  background: #f7f7f7;
+  text-align: center;
+}
+
+.logos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 30px;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.logos-grid img {
+  width: 100px;
+  height: auto;
+  filter: grayscale(100%);
+  transition: 0.3s ease;
+  margin: auto;
+}
+
+.logos-grid img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+
+
+.clients-gallery {
+  padding: 80px 0;
+  background: #fff;
+}
+
+.gallery-wrapper {
+  position: relative;
+  width: 100%;
+  padding: 0 5%;
+}
+
+.gallery-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.gallery-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-img {
+  min-width: 350px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
+}
+
+.gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: var(--darkblue);
+  color: var(--lightyellow);
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.gallery-arrow.left { left: 10px; }
+.gallery-arrow.right { right: 10px; }
+
+.references {
+  padding: 80px 5%;
+  background: #f7f7f7;
+  text-align: center;
+}
+
+.logos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 25px;
+  align-items: center;
+  justify-items: center;
+  margin-top: 40px;
+}
+
+.logos-grid img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.logos-grid img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+
+
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+.lightbox-nav span {
+  position: absolute;
+  top: 50%;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+}
+
+#prev { left: 30px; }
+#next { right: 30px; }
+
+
 /* ------------------ FOOTER SIDERAL OPTIMISÉ ------------------ */
 footer {
     width: 100%;
@@ -639,66 +850,6 @@ footer .social-links a:hover {
     display: none;
   }
 
-
-
-  /* تنسيق الحاوية الكبرى */
-.gallery-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 1200px; /* يمنع التمدد اللانهائي */
-    margin: 0 auto;
-    padding: 0 40px;
-}
-
-/* تنسيق شريط الصور */
-.gallery-scroll {
-    display: flex; /* يجعل الصور بجانب بعضها */
-    flex-wrap: nowrap; /* يمنع الصور من النزول لسطر جديد */
-    overflow-x: auto; /* يسمح بالتمرير الأفقي */
-    gap: 20px;
-    scroll-behavior: smooth;
-    padding: 20px 0;
-}
-
-/* تنسيق الصور الفردية */
-.gallery-img {
-    width: 350px; /* عرض ثابت للصورة */
-    height: 250px; /* ارتفاع ثابت */
-    flex-shrink: 0; /* يمنع المتصفح من تصغير الصورة */
-    object-fit: cover; /* لضمان عدم تشوه الصورة */
-    border-radius: 12px;
-}
-/* تنسيق قسم الشعارات */
-.references {
-    padding: 60px 5%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.logos-grid {
-    display: grid;
-    /* توزيع الشعارات في أعمدة متساوية (4 في السطر في الشاشات الكبيرة) */
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-    gap: 30px;
-    align-items: center;
-    justify-items: center;
-}
-
-/* تنسيق كل شعار */
-.logos-grid img {
-    width: 100%;
-    max-width: 150px; /* تحديد أقصى عرض للشعار */
-    height: 100px;
-    object-fit: contain; /* يضمن بقاء اللوغو كاملاً بدون قص */
-    filter: grayscale(100%);
-    transition: 0.3s ease;
-}
-
-.logos-grid img:hover {
-    filter: grayscale(0%);
-    transform: scale(1.05);
-}
-
   /* ---------- FOOTER ---------- */
 
   .f-item-con {
@@ -754,5 +905,3 @@ footer .social-links a:hover {
 .hamburger.active span:nth-child(3) {
   transform: rotate(-45deg) translate(6px, -6px);
 }
-
-
